@@ -1,1 +1,43 @@
-medals 01
+<div id="intro" class="box generalbox boxaligncenter"><div class="no-overflow" id="yui_3_17_2_1_1558940063850_61"><div>
+<p><strong>Studenta apliecības numura pedējais cipara dalīšanas atlikums uz divi (APPLNUM % 2) nosaka uzdevuma variantu.</strong></p>
+</div>
+<div id="yui_3_17_2_1_1490707432991_47">
+<p><strong>0) &nbsp;Izveidot klasi ar saistīta saraksta realizāciju, kura implementē sekojušas funkcijas:</strong></p>
+<p>- skaitļa pievienošanu saraksta beigās</p>
+<p>- skaitļa iegušanu pēc tā numura no saraksta</p>
+<p>Nedrīkst izmantot kolekcijas un masīvus.</p>
+<p id="yui_3_17_2_1_1490707432991_46"><a href="https://en.wikipedia.org/wiki/Linked_list" class="_blanktarget">https://en.wikipedia.org/wiki/Linked_list</a></p>
+<p>Iegūtajam sarakstam veiksmīgi jāizpilda sekojuši testi:</p>
+<pre data-initialized="true" data-gclp-id="0">@Test
+ public void testAddOneItem() {
+ MyList list = new MyList();
+ list.add(3);
+ assertEquals(3, list.get(0));
+ }<br>
+ @Test
+ public void testAddSecondItem() {
+ MyList list = new MyList();
+ list.add(3);
+ list.add(5);
+ assertEquals(5, list.get(1));
+ }
+
+ @Test
+ public void testFirstItemRemainsAfterAddingSecond() {
+ MyList list = new MyList();
+ list.add(3);
+ list.add(5);
+ assertEquals(3, list.get(0));
+ }</pre>
+</div>
+<div></div>
+<div id="yui_3_17_2_1_1558940063850_60"><strong id="yui_3_17_2_1_1558940063850_59">1) Create a Polygon class. A polygon is defined by sequence of vertices.&nbsp;</strong></div>
+<div>It shall be possible to create an empty polygon and then add vertices one by one.&nbsp;</div>
+<div>Each vertex is defined as a point with two integer coordinates in 2D coordinate space. Vertices are immutable.&nbsp;</div>
+<div>It shall be possible to get a specific vertex of polygon by vertex sequence number. Attempt to get a non-existing vertex shall result in IndexOutOfBounds expection thrown.</div>
+<div>It shall be possible to delete a vertex specified by vertex number.&nbsp;</div>
+<div>Printing out a polygon shall result in each vertex coordinates being printed.&nbsp;</div>
+<div>Use no collections and no arrays in Polygon implementation.</div>
+<div></div>
+<div>Here follows a short demo of Polygon capabilities:&nbsp;</div>
+<pre data-initialized="true" data-gclp-id="1" id="yui_3_17_2_1_1558940063850_63"><span face="courier new, courier, monospace">import org.junit.Test;<br> public class PolygonConsoleDemo {<br> public static void main(String[] args) {<br> Polygon polygon = new Polygon();<br> System.out.println("Empty: " + polygon);<br> <br> polygon.add(new Point(1, 2));<br> polygon.add(new Point(3, 10));<br> polygon.add(new Point(5, 4));<br> System.out.println("Triangle: " + polygon);<br> <br> polygon.delete(0);<br> System.out.println("Segment: " + polygon);<br> <br> System.out.println("First vertex: " + polygon.getVertex(0));<br> <br> System.out.println("Get missing vertex");<br> polygon.getVertex(5);<br> }<br> }<br> <br> /*<br> Empty: Empty polygon<br> Triangle: (1, 2) (3, 10) (5, 4)<br> Segment: (3, 10) (5, 4)<br> First vertex: (3, 10)<br> Get missing vertex<br> Exception in thread "main" java.lang.IndexOutOfBoundsException<br> at polygon.Polygon.getVertex(Polygon.java:55)<br> at polygon.PolygonConsoleDemo.main(PolygonConsoleDemo.java:19)<br> */</span></pre></div></div>
